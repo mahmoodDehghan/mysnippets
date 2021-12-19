@@ -1,0 +1,104 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"add a flutter page":{
+		"scope": "dart",
+		"prefix": "page",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"import 'package:hooks_riverpod/hooks_riverpod.dart';",
+			"\nclass ${1:PageName} extends HookConsumerWidget {",
+			"\tstatic const String routeName = '${2:routeName}';",
+			"\n\tconst ${1:PageName}({Key? key}) : super(key: key);",
+			"\n\t@override",
+			"\tWidget build(BuildContext context, WidgetRef ref) {",
+			"\t\treturn const Scaffold(",
+			"\t\t\tbody: Center(child:Text('This is ${1:PageName}'),),",
+			"\t\t);",
+			"\t}",
+			"}",
+		],
+		"description": "add a default material page structure",
+	},
+	"hook consumer widget":{
+		"scope": "dart",
+		"prefix": "hcw",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"import 'package:hooks_riverpod/hooks_riverpod.dart';",
+			"\nclass ${1:widgetName} extends HookConsumerWidget {",
+			"\tconst ${1:widgetName}({Key? key}) : super(key: key);",
+			"\n\t@override",
+			"\tWidget build(BuildContext context, WidgetRef ref) {",
+			"\t\treturn Container();",
+			"\t}",
+			"}"
+		],
+		"description": "add a hook consumer widget"
+	},
+	"form widget template hcw":{
+		"scope": "dart",
+		"prefix": "form",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"import 'package:hooks_riverpod/hooks_riverpod.dart';",
+			"\nclass ${1:widgetName} extends HookConsumerWidget {",
+			"\t${1:widgetName}({Key? key}) : super(key: key);",
+			"\n\tfinal _formKey = GlobalKey<FormState>();",
+			"\n\t@override",
+			"\tWidget build(BuildContext context, WidgetRef ref) {",
+			"\t\treturn Form(",
+			"\t\t\tkey: _formKey,",
+			"\t\t\tchild: Column(",
+			"\t\t\t\tchildren: <Widget>[],",
+			"\t\t\t),",
+			"\t\t);",
+			"\t}",
+			"}"
+		],
+		"description": "add a basic hook consumer form widget"
+	},
+	"add min size row":{
+		"scope": "dart",
+		"prefix": "rowmin",
+		"body": [
+			"Row(",
+      "\tmainAxisSize: MainAxisSize.min,",
+      "\tchildren: [\n",
+      "\t]",        
+      "),",
+		],
+		"description": "add row widget with maixAxis size of min",
+	},
+	"serializer import":{
+		"scope": "python",
+		"prefix": "impser",
+		"body": "from rest_framework import serializers",
+		"description": "import serilizers for django restframeork",
+	},
+	"add all field serilize":{
+		"scope": "python",
+		"prefix": "ser_all",
+		"body": [
+			"class ${1:model}Serilizer(serializers.ModelSerializer):",
+			"\tclass Meta:",
+			"\t\tmodel = ${1:model}",
+			"\t\tfields = '__all__'",
+		],
+		"description": "add model serilizer for specific model with all it's feilds",
+	}
+}
